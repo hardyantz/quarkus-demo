@@ -16,7 +16,7 @@ public class Tag extends PanacheEntityBase {
 
     private String label;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany()
     @JoinTable(name = "post_tag", joinColumns = {@JoinColumn(name = "tagId")}, inverseJoinColumns = {@JoinColumn(name = "postId")})
     private List<Post> posts = new ArrayList<Post>();
 

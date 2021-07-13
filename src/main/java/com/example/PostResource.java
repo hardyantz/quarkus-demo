@@ -51,6 +51,7 @@ public class PostResource {
     @Transactional
     public Response updatePost(@PathParam("id") Integer id, Post post) {
         Post postCurrent = Post.findById(id);
+        postCurrent.setPostId(id);
         postCurrent.setTitle(post.getTitle());
         postCurrent.setContent(post.getContent());
         postCurrent.setTags(post.getTags());
